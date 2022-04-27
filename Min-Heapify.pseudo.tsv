@@ -58,20 +58,22 @@ LEFT(i)
     return (2i)
 RIGHT(i)
     return (2i+1)
+PARENT(i)
+    return ⌊i/2⌋
 
 ITERATIVE-MAX-HEAPIFY(A,i)
-1   for i= 1 to A.heap-size
-2       l = LEFT[i]
-3       r = RIGHT[i]
-4        if A[l] ≥ A[i]
-5            largest = l
-6        else    
-7            largest = i
-8        if A[r] ≥ A[largest]
-9            largest = r
+1   i = 1
+2   while i < A.heap-size 
+3       left = LEFT(i)
+4       right = RIGHT(i)
+5       largest = i
+6       if left ≤ A.heap-size and A[l] > A[i]
+7           largest = left
+8       if left ≤ A.heap-size and A[r] > A[i]
+9           largest = right
+10      if largest ≠ i
+11          exchange A[i] and A[largest]
+12      else return
+13  return
 
-10        if largest ≠ i
-11            exchange (A[i], A[largest])
-12            i = largest
-13        else return 
          
