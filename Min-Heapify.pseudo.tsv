@@ -1,0 +1,11 @@
+Min-Heapify (A, i)    
+1	l = Left(i)
+2	r = Right(i)
+3	if l ≤ A.heap-size and A[l] < A[i]
+4	        smallest = l
+5	else smallest = i
+6	if r ≤ A.heap-size and A[r] < A[smallest]
+7	         smallest = r
+8	if smallest ≠ i
+9	          exchange A[i] with A[smallest]
+10	         Min-Heapify (A, smallest)
