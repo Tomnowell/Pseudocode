@@ -1,0 +1,32 @@
+
+SinglyList-Insert (L, x)
+1	x.next = L.head
+2	L.head = x           
+ 
+
+Or with the use of a sentinel, the algorithm looks like this:
+
+SinglyList-Insert (L, x)
+1	x.next = L.nil.next
+2	L.nil.next = x   
+
+
+SinglyListStack-Push (S, x)	Note
+1	x.next = S.top	//  make the original top the next element in the list
+2	S.top = x	//  assign the new top to be x 
+ 
+
+ 
+SinglyListStack-Empty (S)
+1	if S.top == nil                                 
+2	         return True
+3	else  return False
+ 
+
+
+SinglyListStack-Pop (S)	Note
+1	if SinglyListStack-Empty (S)
+2	          error “underflow”	
+3	else x = S.top	//  assign x to be the original top
+4	          S.top = S.top.next	//  make the second top element to be the new top
+5	          return x	
