@@ -1,0 +1,9 @@
+RECURSIVE-BINARY-SEARCH(A, x,  low, high)
+1	if low > high
+2	           return 0  
+3	mid = (low+high)/2
+4	if x = A[mid]
+5	          return mid
+6	else if x > A[mid]
+7	          return RECURSIVE-BINARY-SEARCH(A, x, mid +1, high)
+8	else return RECURSIVE-BINARY-SEARCH(A, x, low, mid−1)
