@@ -1,4 +1,17 @@
-Min-Heapify (A, i)    
+// Implemented in Java API PriorityQueue
+MAX-HEAPIFY(A,i)
+1	l = Left(i)
+2	r = Right(i)
+3	if l ≤ A.heap-size and A[l] > A[i]
+4	    largest = l
+5	else largest = i
+6	if r ≤ A.heap-size and A[r] > A[largest]
+7	    largest = r
+8	if largest ≠ i
+9	    exchange A[i] with A[smallest]
+10	    MAX-HEAPIFY(A, largest)
+
+MIN-HEAPIFY (A, i)    
 1	l = Left(i)
 2	r = Right(i)
 3	if l ≤ A.heap-size and A[l] < A[i]
@@ -9,3 +22,56 @@ Min-Heapify (A, i)
 8	if smallest ≠ i
 9	          exchange A[i] with A[smallest]
 10	         Min-Heapify (A, smallest)
+
+
+
+HEAP-MINIMUM (A)
+1   return a[1]
+
+HEAP-EXTRACT-MIN(A)
+1    if heap-size < 1
+2        error “heap underflow”
+3    min = A[1]
+4    A[1] = A[heap-size]
+5    heap-size=A.heap-size-1
+5    MIN-HEAPIFY(A, 1)
+7    return min
+
+
+HEAP-DECREASE-KEY(A, i, key)
+    if key > A[i ]
+        error “new key is greater than current key”
+    A[i ] = key
+    while i > 1 and A[PARENT(i )] > A[i ]
+        exchange A[i ] with A[PARENT(i )]
+    i = PARENT(i)
+
+
+//
+MIN-HEAP-INSERT(A, key)
+    heap-size= A.heap-size+1
+    A[A.heap-size]=∞
+    HEAP-DECREASE-KEY(A, heap-size, key)
+
+
+LEFT(i)
+    return (2i)
+RIGHT(i)
+    return (2i+1)
+
+ITERATIVE-MAX-HEAPIFY(A,i)
+1   for i= 1 to A.heap-size
+2       l = LEFT[i]
+3       r = RIGHT[i]
+4        if A[l] ≥ A[i]
+5            largest = l
+6        else    
+7            largest = i
+8        if A[r] ≥ A[largest]
+9            largest = r
+
+10        if largest ≠ i
+11            exchange (A[i], A[largest])
+12            i = largest
+13        else return 
+         
