@@ -30,3 +30,32 @@ SinglyListStack-Pop (S)	Note
 3	else x = S.top	//  assign x to be the original top
 4	          S.top = S.top.next	//  make the second top element to be the new top
 5	          return x	
+
+SinglyListQueue-EnQueue (Q, x)
+1	if SinglyListQueue-Empty(Q)
+2	            Q.head = x
+3	            Q.tail = x
+4	else Q.tail.next = x
+5	            Q.tail = x 
+
+SinglyListQueue-Empty (Q)
+1	if Q.head == nil
+2	          return True
+3	else  return False
+
+ 
+ 
+
+SinglyListQueue-DeQueue (Q)
+1	 if SinglyListQueue-Empty(Q)
+2	            error “underflow”
+3	else x = Q.head 
+4	            Q.head  = Q.head.next
+5	            return x
+
+List-Search’ (L, k)
+1	x = L.nil.next
+2	L.nil.key = k
+3	while x.key != k
+4		x = x.next
+5	return x
