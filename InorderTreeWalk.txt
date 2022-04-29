@@ -1,0 +1,11 @@
+INORDER-TREE-WALK-WITH-STACK (x)
+1   create a new stack S
+2   if x≠NIL
+3       PUSH (S, x)
+4   while STACK-EMPTY(S)==false
+5       x = POP(S)
+6       if x.right ≠NIL
+7           PUSH (S, x.right)
+8       print x.key
+9       if x.left ≠ NIL
+10          PUSH (S, x.left)
